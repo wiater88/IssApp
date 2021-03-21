@@ -1,4 +1,4 @@
-#ISS - Projekt praktyczny SDA grupa 3
+ISS - Projekt praktyczny SDA grupa 3
 ========
 Autorzy:
 1. Piotr Waiatr
