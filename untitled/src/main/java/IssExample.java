@@ -16,7 +16,7 @@ public class IssExample {
         ApiConnection api = new ApiConnection();
 
         api.getLocationNow();
-        api.getLocationPasses(51,44);
+        api.getLocationPasses(22,16);
         api.getPeopleInSpace();
 
 

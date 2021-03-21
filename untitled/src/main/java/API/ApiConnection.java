@@ -9,7 +9,6 @@ import okhttp3.Response;
 import java.io.IOException;
 
 
-
 public class ApiConnection {
     private final static String BASE_URL = "http://api.open-notify.org/iss-now.json";
 
@@ -27,7 +26,7 @@ public class ApiConnection {
     }
 
     public void getLocationPasses(int lat, int lon) throws IOException {
-        String sql = "http://api.open-notify.org/iss-pass.json?lat="+ lat +"&lon=+"+lon;
+        String sql = "http://api.open-notify.org/iss-pass.json?lat=" + lat + "&lon=+" + lon;
         Request request = new Request.Builder()
                 .url(sql)
                 .build();
