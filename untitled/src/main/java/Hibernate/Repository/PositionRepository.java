@@ -1,19 +1,27 @@
-package API.position;
+package Hibernate.Repository;
 
+import API.PositionNow.PositionNow;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import java.io.IOException;
 import java.net.URL;
 
-public class Test {
+public class PositionRepository {
 
-    public static void main(String[] args) throws IOException {
+
+    public PositionRepository() {
+
+    }
+
+    public void getPosition() throws IOException {
         URL url = new URL("http://api.open-notify.org/iss-now.json");
         ObjectMapper op = new ObjectMapper()
                 .configure(DeserializationFeature.FAIL_ON_MISSING_CREATOR_PROPERTIES,false);
 
-        Position p = op.readValue(url,Position.class);
-        System.out.println(p);
+        PositionNow p = op.readValue(url, PositionNow.class);
+
     }
 }

@@ -1,5 +1,6 @@
 package API;
 
+import API.PositionNow.PositionNow;
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -16,13 +17,9 @@ public class ApiConnection {
     }
 
     public void getLocationNow() throws IOException {
-        Request request = new Request.Builder()
-                .url(BASE_URL)
-                .build();
-        OkHttpClient client = new OkHttpClient();
-        Call call = client.newCall(request);
-        Response response = call.execute();
-        System.out.println(response.body().string());
+        PositionNow positionNow = PositionNow.getPosition();
+        System.out.println(positionNow.getIss());
+        System.out.println(positionNow.getTimestamp());
     }
 
     public void getLocationPasses(int lat, int lon) throws IOException {
