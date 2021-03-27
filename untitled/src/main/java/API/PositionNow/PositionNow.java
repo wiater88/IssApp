@@ -11,8 +11,10 @@ public class PositionNow {
 
     @JsonProperty("timestamp")
     private String timestamp;
+
     @JsonProperty("message")
     private String message;
+
     @JsonProperty("iss_position")
     iss_position issposition;
 
