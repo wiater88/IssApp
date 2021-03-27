@@ -37,7 +37,7 @@ public class iss_position {
 
     @Override
     public String toString() {
-        return "Polozenie Stacji ISS{" +
+        return "Polozenie Stacji ISS " +
                 "\n Szerokosc geograficzna: " + latitude + '\'' +
                 "\n Długość geograficzna : " + longitude + '\'';
     }
