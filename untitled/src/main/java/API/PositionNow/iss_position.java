@@ -1,4 +1,4 @@
-package API.position;
+package API.PositionNow;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -37,9 +37,8 @@ public class iss_position {
 
     @Override
     public String toString() {
-        return "iss_position{" +
-                "latitude='" + latitude + '\'' +
-                ", longitude='" + longitude + '\'' +
-                '}';
+        return "Polozenie Stacji ISS{" +
+                "\n Szerokosc geograficzna: " + latitude + '\'' +
+                "\n Długość geograficzna : " + longitude + '\'';
     }
 }
