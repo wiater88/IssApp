@@ -1,92 +1,80 @@
-ISS - Projekt praktyczny SDA grupa 3
-========
-Autorzy:
-1. Piotr Waiatr
-2. Mateusz Bednarczyk
-3. Adrian Tuta
+Authors:
+1. Piotr Wiatr
+2. Adrian Tuta
 
-**Krótki opis systemu:**
+**Short description of the system:**
 
-W ramach projektu należy utworzyć aplikację pokazującą informacje o ruchu Międzynarodowej stacji kosmicznej (ISS).
+The project should create an application showing information about the movement of the International Space Station (ISS).
 
-## Główne funkcje systemu
+## The main functions of the system
 
-* Pobieranie danych o ruchu ISS z odpowiedniego serwisu sieciowego
-* Przetwarzanie pobranych danych po stronie aplikacji
-* Pobrane dane powinny być zapisywane do bazy danych
+* Downloading ISS traffic data from the relevant web service
+* Processing of downloaded data on the application side
+* Downloaded data should be written to the database
 
-## Technologie
+## Technologies
 
-* Aplikacja konsolowa
-* JDBC lub Hibernate
-* Klient Http, np. HttpClient, OkHttp
-* Warstwa prezentacji aplikacji oparta o wzorzec, np. MVC/MVP
-* Logika domenowa podzielona na warstwy, np. DAO, Serwis
-* Narzędzie do serializacji/deserializacji danych formatu JSON, np. Gson, Jackson
-* Narzędzia do testowania jednostkowego
-* (Opcjonalnie) framework do wstrzykiwania zależności, np. Guice
-* (Opcjonalnie) frontend oparty o JavaFX
+* Console application
+* JDBC or Hibernate
+* Http client, eg HttpClient, OkHttp
+* Application presentation layer based on a pattern, eg MVC / MVP
+* Domain logic divided into layers, eg DAO, Service
+* JSON data serialization / deserialization tool, eg Gson, Jackson
+* Unit testing tools
+* (Optional) a dependency injection framework, such as Guice
+* (Opcjonalnie) (Optional) JavaFX based frontend
 
-## Funkcjonalności
+## Functionalities
 
-**Interfejs użytkownika**
+**User Interface**
 
-Użytkownik w ramach widoku konsolowego/graficznego powinen mieć możliwość wybrania jednej z poniższych opcji:
+As part of the console / graphical view, the user should be able to select one of the following options:
 
-* (obliczania prędkości ISS
-* (zwracanie listy nadchodzących przebiegów ISS dla określonej lokalizacji
-* (zwracanie liczby osób przebywających w kosmosie w ramach ISS
+* (ISS speed calculation
+* (return a list of upcoming ISS runs for a specific location
+* (returning the number of people in space within the ISS
 
-## Integracja z API
+## Integration with API
 
-Funkcjonalność aplikacji powinna być oparta o [API:] (http://open-notify.org/Open-Notify-API)
+Application functionality should be based on [API:] (http://open-notify.org/Open-Notify-API)
 
-## Obliczanie prędkości ISS
 
-Użytkownik powinien dostawać informację o prędkości ISS na podstawie dwóch odczytów, wykorzystując [API] (http://open-notify.org/Open-Notify-API). 
-Obliczona prędkość powinna zostać zapisana do bazy danych.
+## ISS speed calculation
 
-## Zwracanie listy nadchodzących przebiegów ISS dla określonej lokalizacji
+The user should be informed about the ISS speed based on two readings using [API] (http://open-notify.org/Open-Notify-API). The calculated speed should be saved to the database.
 
-Użytkownik wybierając tę opcję powinien móc zobaczyć aktualną listę nadchodzących przebiegów ISS dla określonej lokalizacji, wykorzystując [API] (http://open-notify.org/Open-Notify-API/ISS-Pass-Times/). 
-Dane powinny być zapisywane do bazy danych. Wprowadzana lokalizacja powinna być walidowana zgodnie z wytycznymi opisanymi w dokumentacji.
+## Returning a list of upcoming ISS runs for a specific location
 
-## Zwracanie liczby osób przebywających w kosmosie w ramach ISS
+By selecting this option, the user should be able to see the current list of upcoming ISS runs for a specific location using [API] (http://open-notify.org/Open-Notify-API/ISS-Pass-Times/). Data should be written to the database. The entered location should be validated in accordance with the guidelines described in the documentation.
 
-Użytkownik wybierając tę opcję powinien móc zobaczyć aktualną listę osób przebywających w kosmosie w ramach misji kosmicznej, wykorzystując [API] (http://open-notify.org/Open-Notify-API/People-In-Space/). 
-Dane powinny być zapisywane do bazy danych.
+## Return the number of people in space within the ISS
 
-## Funkcjonalności opcjonalne
+By selecting this option, the user should be able to see the current list of people in space as part of the space mission, using [API] (http://open-notify.org/Open-Notify-API/People-In-Space/). Data should be written to the database.
 
-**Dane statystyczne**
+## Optional functionalities - TBC
 
-Użytkownik powinien móc obliczać, np.:
+**Statistic data**
 
-* średnią prędkość w określonym fragmencie czasu, np. miesiąc, rok. Obliczenia te powinny być oparte o aktualne rekordy z bazy danych
-* ile razy ISS znajdowało się nad daną lokalizacją w przedziale czasu
-* liczbę osób przebywających w ramach misji kosmicznej na ISS
+The user should be able to calculate, e.g .:
 
-**Wizualizacja**
+* average speed over a certain period of time, eg month, year. These calculations should be based on the current records from the database
+* how many times the ISS has been over a given location in the time interval
+* the number of people on the ISS space mission
 
-W ramach interfejsu graficznego zaimplementuj mechanizm wyświetlający aktualną pozycję ISS na mapie świata.
+**visualisation**
 
-**Zapis/odczyt danych**
+As part of the graphical interface, implement a mechanism that displays the current position of the ISS on the world map..
 
-Użytkownik powinien móc zapisać aktualnie zgromadzone dane do pliku w dowolnym formacie, a następnie odtworzyć je zapisując bezpośrednio do bazy danych.
+**Data writing / reading**
 
-## Testy jednostkowe
+The user should be able to save the currently collected data to a file in any format, and then restore them by saving directly to the database.
 
-Implementowane funkcjonalności powinny zostać pokryte testami jednostkowymi zgodnie z powszechnie stosowanymi metodologiami i praktykami.
+## Unit tests
 
-## Dodatkowe wymagania
+The implemented functionalities should be covered with unit tests in accordance with commonly used methodologies and practices.
 
-Program powinien spełniać następujące kryteria:
+## Additional requirements
 
-* funkcjonalność
-* jakość kodu (przejrzystość, utrzymywalność, struktura)
-* użycie najnowszych technologii (min. najnowsza stablina wersja JDK, najnowsze stabilne wersje bibliotek)
-* user experience
-* niezawodność
+The program should meet the following criteria:
 
-Zadanie celowo jest sformułowane bardzo ogólnie. Jeśli coś nie jest określone, można zrealizować je w sposób dogodny dla kursanta. 
-Nie ma żadnych preferowanych rozwiązań czy technologii poza wymienionymi.
+
