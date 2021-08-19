@@ -1,5 +1,3 @@
-ISS - Practical project SDA group
-========
 Authors:
 1. Piotr Wiatr
 2. Adrian Tuta
@@ -79,8 +77,4 @@ The implemented functionalities should be covered with unit tests in accordance 
 
 The program should meet the following criteria:
 
-* functionality
-* code quality (transparency, maintainability, structure)
-* use of the latest technologies (at least the latest stable version of JDK, the latest stable versions of libraries)
-* user experience
-* reliability
+
